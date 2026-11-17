@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +7,58 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h2>Sintaxe Labs</h2>
-            <nav class="nav" aria-label="Navegação principal">
-                <ul class="list">
-                    <li><a href="#" class="link">Conteúdos</a></li>
-                    <li><a href="#" class="link">Exercícios</a></li>
-                    <li><a href="#" class="link">Curiosidades</a></li>
-                </ul>
-            </nav>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <span class="marca">Sintaxe <span>Labs</span></span>
+
+            <div class="menu-principal">
+                <span>Apresentação</span>
+            </div>
         </div>
     </header>
-    <main class="main">
 
+    <main>
+        <section class="secao-apresentacao">
+            <div class="largura-pagina duas-colunas">
+                <div class="coluna card-apresentacao">
+                    <p class="rotulo">Plataforma de aprendizado</p>
+                    <h1>Um caminho para <span>aprender a programar.</span></h1>
+                    <p class="descricao-apresentacao">O Sintaxe Labs é um projeto de plataforma educacional para estudar linguagens de programação e tecnologias em trilhas, do básico ao avançado.</p>
+                </div>
+
+                <div class="coluna imagem">
+                    <div class="imagem-reservada"></div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-info">
-                <h2>Sintaxe Labs</h2>
-                <p>Conteúdos, exercícios e curiosidades para quem está aprendendo a programar.</p>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
             </div>
 
-            <nav class="footer-nav" aria-label="Navegação do rodapé">
+            <div class="grupo-rodape">
                 <h3>Explorar</h3>
-                <ul class="footer-lista">
-                    <li><a href="#" class="footer-link">Conteúdos</a></li>
-                    <li><a href="#" class="footer-link">Exercícios</a></li>
-                    <li><a href="#" class="footer-link">Curiosidades</a></li>
+                <ul class="lista-rodape">
+                    <li>Apresentação</li>
                 </ul>
-            </nav>
+            </div>
 
-            <nav class="footer-nav" aria-label="Redes sociais">
+            <div class="grupo-rodape">
                 <h3>Contato</h3>
-                <ul class="footer-lista">
-                    <li><a href="#" class="footer-link">GitHub</a></li>
-                    <li><a href="#" class="footer-link">LinkedIn</a></li>
-                    <li><a href="#" class="footer-link">E-mail</a></li>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
                 </ul>
-            </nav>
+            </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>

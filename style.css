@@ -142,6 +142,33 @@ main {
   height: 398px;
 }
 
+.secao-projeto {
+  padding: 72px 0;
+  background: white;
+}
+
+.colunas-projeto {
+  align-items: flex-start;
+}
+
+.titulo-projeto {
+  flex-basis: 260px;
+}
+
+.titulo-projeto h2 {
+  max-width: 390px;
+  font-size: 36px;
+}
+
+.texto-projeto {
+  flex-basis: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--texto-secundario);
+  font-size: 17px;
+}
+
 .rodape {
   border-top: 1px solid black;
   background: var(--fundo-rodape);

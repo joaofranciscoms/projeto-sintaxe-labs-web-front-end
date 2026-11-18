@@ -212,6 +212,26 @@ main {
   font-size: 15px;
 }
 
+.secao-publico {
+  padding: 72px 0;
+  border-top: 1px solid var(--borda);
+  background: white;
+}
+
+.card-publico h2 {
+  font-size: 36px;
+}
+
+.descricao-publico {
+  margin-top: 12px;
+  color: var(--texto-secundario);
+  font-size: 17px;
+}
+
+.imagem-publico .imagem-reservada {
+  height: 305px;
+}
+
 .rodape {
   border-top: 1px solid black;
   background: var(--fundo-rodape);

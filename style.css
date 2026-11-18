@@ -169,6 +169,49 @@ main {
   font-size: 17px;
 }
 
+.secao-funcionamento {
+  padding: 72px 0;
+  border-top: 1px solid var(--borda);
+  background: var(--fundo);
+}
+
+.secao-funcionamento h2 {
+  font-size: 36px;
+}
+
+.descricao-funcionamento {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  color: var(--texto-secundario);
+}
+
+.lista-etapas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-left: 24px;
+}
+
+.card-etapa {
+  flex: 1 1 275px;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--destaque);
+  border-radius: 10px;
+  background: white;
+}
+
+.card-etapa h3 {
+  font-size: 18px;
+}
+
+.card-etapa p {
+  margin-top: 8px;
+  color: var(--texto-secundario);
+  font-size: 15px;
+}
+
 .rodape {
   border-top: 1px solid black;
   background: var(--fundo-rodape);

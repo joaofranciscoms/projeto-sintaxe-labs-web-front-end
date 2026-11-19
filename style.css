@@ -1,6 +1,6 @@
 :root {
   --fundo: #f8fafc;
-  --fundo-rodape: #eae7dd;
+  --fundo-rodape: #edf4ff;
   --texto: #0f172a;
   --texto-secundario: #475569;
   --destaque: #2563eb;
@@ -98,6 +98,7 @@ main {
 }
 
 .menu-principal span:hover {
+  cursor: pointer;
   border-bottom-color: var(--detalhe);
   color: var(--destaque);
 }
@@ -148,7 +149,7 @@ main {
 }
 
 .colunas-projeto {
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .titulo-projeto {
@@ -233,7 +234,7 @@ main {
 }
 
 .rodape {
-  border-top: 1px solid black;
+  border-top: 1px solid var(--borda);
   background: var(--fundo-rodape);
 }
 

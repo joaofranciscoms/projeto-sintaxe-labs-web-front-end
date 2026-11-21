@@ -283,3 +283,152 @@ main {
   font-size: 15px;
   text-align: center;
 }
+
+.secao-comecar {
+  padding: 80px 0;
+  border-top: 1px solid var(--borda);
+  background: var(--azul-claro);
+  text-align: center;
+}
+
+.texto-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secao-comecar h2 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.descricao-comecar {
+  max-width: 560px;
+  font-size: 17px;
+  color: var(--texto-secundario);
+  margin-bottom: 28px;
+}
+
+.botao-destaque {
+  display: inline-block;
+  background-color: var(--destaque);
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botao-destaque:hover {
+  background-color: var(--azul-escuro);
+  transform: translateY(-2px);
+}
+
+
+.secao-trilhas {
+  padding: 60px 0 80px 0;
+  background: var(--fundo);
+}
+
+.cabecalho-trilhas {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px auto;
+}
+
+.cabecalho-trilhas h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+.grade-trilhas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.card-trilha {
+  flex: 1 1 360px;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-trilha:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.imagem-trilha {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #e0ebfb;
+}
+
+.imagem-trilha img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conteudo-card-trilha {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.badge-trilha {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.conteudo-card-trilha h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.conteudo-card-trilha p {
+  color: var(--texto-secundario);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.botao-trilha {
+  display: block;
+  text-align: center;
+  border: 1px solid var(--destaque);
+  color: var(--destaque);
+  background-color: transparent;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.botao-trilha:hover {
+  background-color: var(--destaque);
+  color: #ffffff;
+}

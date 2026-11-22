@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com HTML - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="frontend.html" class="link-voltar">&larr; Voltar para Front-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 1 • Front-end</p>
+                    <h1>Primeiros passos com HTML</h1>
+                    <p>Entenda o que é a linguagem de marcação da web e como criar sua primeira página do zero.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é HTML?</h2>
+                    <p>O <strong>HTML (HyperText Markup Language)</strong> não é uma linguagem de programação, mas sim uma linguagem de marcação. Ele é responsável por definir a estrutura e o significado de todo o conteúdo de uma página: títulos, parágrafos, imagens, links e botões.</p>
+                    <p>Ele funciona através de <strong>tags</strong> (elementos entre sinais de menor e maior, como <code>&lt;p&gt;</code>), que geralmente possuem uma abertura e um fechamento.</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Crie uma pasta no seu computador para o projeto.</li>
+                        <li>Abra o seu editor de código (como o VS Code) e crie um arquivo chamado <strong>index.html</strong>.</li>
+                        <li>Escreva a estrutura básica abaixo, salve e abra o arquivo dando dois cliques nele para ver no navegador.</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é o meu primeiro parágrafo em HTML.&lt;/p&gt;
+    &lt;a href="https://github.com"&gt;Acessar o GitHub&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Tente adicionar um subtítulo usando a tag <code>&lt;h2&gt;</code> e uma lista de itens usando <code>&lt;ul&gt;</code> e <code>&lt;li&gt;</code> dentro do <code>&lt;body&gt;</code>.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="frontend.html" class="link-voltar" style="margin: 0;">&larr; Lista de tecnologias</a>
+                    <a href="css.html" class="botao-destaque">Próximo: CSS &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

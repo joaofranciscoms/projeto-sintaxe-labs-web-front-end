@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com CSS - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="frontend.html" class="link-voltar">&larr; Voltar para Front-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 2 • Front-end</p>
+                    <h1>Primeiros passos com CSS</h1>
+                    <p>Aprenda a conectar folhas de estilo ao seu HTML e transformar a aparência das suas páginas.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é CSS?</h2>
+                    <p>O <strong>CSS (Cascading Style Sheets)</strong> é a linguagem usada para estilizar elementos HTML. Enquanto o HTML cuida da estrutura, o CSS define cores, fontes, espaçamentos, tamanhos e o posicionamento de cada bloco na tela.</p>
+                    <p>Uma regra CSS é composta por um <strong>seletor</strong> (quem você quer estilizar), uma <strong>propriedade</strong> (o que mudar) e um <strong>valor</strong> (como deve ficar).</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Na mesma pasta do seu <code>index.html</code>, crie um arquivo chamado <strong>style.css</strong>.</li>
+                        <li>Dentro da tag <code>&lt;head&gt;</code> do seu HTML, conecte o arquivo usando a tag <code>&lt;link&gt;</code>:</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Minha Página Estilizada&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+                    <p>Agora, adicione suas primeiras regras dentro do arquivo <strong>style.css</strong>:</p>
+
+                    <pre class="bloco-codigo"><code>body {
+    background-color: #f8fafc;
+    font-family: Arial, sans-serif;
+    padding: 32px;
+}
+
+h1 {
+    color: #2563eb;
+    font-size: 36px;
+}
+
+p {
+    color: #475569;
+    line-height: 1.6;
+}</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Crie uma classe no HTML (ex: <code>&lt;p class="destaque"&gt;</code>) e estilize apenas ela no CSS usando o ponto na frente: <code>.destaque { font-weight: bold; }</code>.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="html.html" class="link-voltar" style="margin: 0;">&larr; Anterior: HTML</a>
+                    <a href="javascript.html" class="botao-destaque">Próximo: JavaScript &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

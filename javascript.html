@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com JavaScript - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="frontend.html" class="link-voltar">&larr; Voltar para Front-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 3 • Front-end</p>
+                    <h1>Primeiros passos com JavaScript</h1>
+                    <p>Adicione lógica, interatividade e reaja às ações do usuário diretamente no navegador.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é JavaScript?</h2>
+                    <p>O <strong>JavaScript (JS)</strong> é a linguagem de programação da web. Com ele, sua página deixa de ser estática e passa a responder a cliques, validar formulários, alterar textos dinamicamente e buscar dados de servidores.</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Crie um arquivo chamado <strong>script.js</strong> na mesma pasta do seu projeto.</li>
+                        <li>Conecte o script no final do <code>&lt;body&gt;</code> do seu HTML (antes de fechar a tag) para garantir que os elementos da página já tenham carregado:</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>&lt;body&gt;
+    &lt;h1 id="titulo"&gt;Olá!&lt;/h1&gt;
+    &lt;button id="botao"&gt;Clique aqui&lt;/button&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+                    <p>No arquivo <strong>script.js</strong>, capture o botão e faça o texto mudar ao clicar:</p>
+
+                    <pre class="bloco-codigo"><code>const titulo = document.getElementById("titulo");
+const botao = document.getElementById("botao");
+
+botao.addEventListener("click", function () {
+    titulo.textContent = "Você ativou o JavaScript!";
+});</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Tente adicionar um contador de cliques usando uma variável <code>let cliques = 0;</code> e incremente com <code>cliques++</code> toda vez que o botão for pressionado.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="css.html" class="link-voltar" style="margin: 0;">&larr; Anterior: CSS</a>
+                    <a href="trilhas.html" class="botao-destaque">Concluir e ver trilhas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

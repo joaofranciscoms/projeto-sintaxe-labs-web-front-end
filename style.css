@@ -525,3 +525,90 @@ main {
   align-self: flex-start;
   padding: 10px 24px;
 }
+/* --- Páginas de Conteúdo / Aulas --- */
+.secao-aula {
+  padding: 48px 0 80px 0;
+  background: var(--fundo);
+  flex: 1;
+}
+
+.conteudo-aula {
+  max-width: 820px;
+}
+
+.cabecalho-aula {
+  margin-bottom: 36px;
+}
+
+.cabecalho-aula h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.cabecalho-aula p {
+  color: var(--texto-secundario);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.bloco-conteudo {
+  background: #ffffff;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.bloco-conteudo h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.bloco-conteudo p,
+.bloco-conteudo li {
+  color: var(--texto-secundario);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.bloco-conteudo ul,
+.bloco-conteudo ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.bloco-codigo {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+
+.dica-pratica {
+  background: var(--azul-claro);
+  border-left: 4px solid var(--destaque);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 16px;
+}
+
+.dica-pratica strong {
+  color: var(--azul-escuro);
+}
+
+.navegacao-aula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--borda);
+}

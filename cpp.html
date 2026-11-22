@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com C++ - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="backend.html" class="link-voltar">&larr; Voltar para Back-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 2 • Back-end</p>
+                    <h1>Primeiros passos com C++</h1>
+                    <p>Descubra como o C++ expande o C com recursos modernos e Programação Orientada a Objetos.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é C++?</h2>
+                    <p>O <strong>C++</strong> nasceu como uma extensão da linguagem C, adicionando suporte a classes, objetos, bibliotecas padronizadas (STL) e abstrações mais seguras, sem abrir mão do alto desempenho.</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Com o compilador <strong>G++</strong> instalado, crie um arquivo chamado <strong>main.cpp</strong>.</li>
+                        <li>Escreva o exemplo abaixo utilizando a biblioteca <code>&lt;iostream&gt;</code> para entrada e saída de dados:</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>#include &lt;iostream&gt;
+
+int main() {
+    std::string nome = "Sintaxe Labs";
+    std::cout &lt;&lt; "Bem-vindo ao " &lt;&lt; nome &lt;&lt; "!" &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
+
+                    <p>No terminal, compile e execute com:</p>
+
+                    <pre class="bloco-codigo"><code>g++ main.cpp -o programa
+./programa</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Use <code>std::cin &gt;&gt; nome;</code> para pedir que o usuário digite o próprio nome no terminal antes de exibir a mensagem de boas-vindas.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="c.html" class="link-voltar" style="margin: 0;">&larr; Anterior: C</a>
+                    <a href="java.html" class="botao-destaque">Próximo: Java &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

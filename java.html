@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com Java - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="backend.html" class="link-voltar">&larr; Voltar para Back-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 3 • Back-end</p>
+                    <h1>Primeiros passos com Java</h1>
+                    <p>Entenda a estrutura orientada a objetos do Java e rode sua primeira classe na JVM.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é Java?</h2>
+                    <p>O <strong>Java</strong> é uma linguagem orientada a objetos, fortemente tipada e multiplataforma. Seu código roda dentro da <strong>JVM (Java Virtual Machine)</strong>, permitindo que o mesmo programa funcione em Windows, Linux ou macOS sem precisar ser reescrito.</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Instale o <strong>JDK (Java Development Kit)</strong> no seu computador.</li>
+                        <li>Crie um arquivo chamado <strong>Main.java</strong> (o nome do arquivo deve ser exatamente igual ao nome da classe pública):</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>public class Main {
+    public static void main(String[] args) {
+        String linguagem = "Java";
+        System.out.println("Olá, mundo com " + linguagem + "!");
+    }
+}</code></pre>
+
+                    <p>No terminal, compile o código com <code>javac</code> e execute com <code>java</code>:</p>
+
+                    <pre class="bloco-codigo"><code>javac Main.java
+java Main</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Crie um método simples chamado <code>saudar(String nome)</code> dentro da classe <code>Main</code> e chame-o a partir do <code>main</code>.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="cpp.html" class="link-voltar" style="margin: 0;">&larr; Anterior: C++</a>
+                    <a href="trilhas.html" class="botao-destaque">Concluir e ver trilhas</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

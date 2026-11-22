@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com C - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <a href="index.html" class="marca" style="text-decoration: none;">Sintaxe <span>Labs</span></a>
+            <div class="menu-principal">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><span>Início</span></a>
+                <a href="trilhas.html" style="text-decoration: none; color: inherit;"><span>Trilhas</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-aula">
+                <a href="backend.html" class="link-voltar">&larr; Voltar para Back-end</a>
+
+                <div class="cabecalho-aula">
+                    <p class="rotulo">Passo 1 • Back-end</p>
+                    <h1>Primeiros passos com C</h1>
+                    <p>Conheça a linguagem que moldou os sistemas operacionais e aprenda a compilar seu primeiro programa.</p>
+                </div>
+
+                <article class="bloco-conteudo">
+                    <h2>O que é a linguagem C?</h2>
+                    <p>O <strong>C</strong> é uma linguagem compilada de propósito geral, famosa pela velocidade e controle direto sobre o hardware e a memória. Aprender C dá uma base excelente para entender como qualquer outra linguagem funciona por baixo dos panos.</p>
+                </article>
+
+                <article class="bloco-conteudo">
+                    <h2>Como implementar na prática</h2>
+                    <ol>
+                        <li>Instale um compilador C, como o <strong>GCC</strong> (no Windows via MinGW, ou nativamente no Linux/macOS).</li>
+                        <li>Crie um arquivo chamado <strong>main.c</strong> e adicione o código abaixo:</li>
+                    </ol>
+
+                    <pre class="bloco-codigo"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Olá, mundo em C!\n");
+    return 0;
+}</code></pre>
+
+                    <p>No terminal, compile e execute o programa com os comandos:</p>
+
+                    <pre class="bloco-codigo"><code>gcc main.c -o programa
+./programa</code></pre>
+
+                    <div class="dica-pratica">
+                        <strong>Para praticar:</strong> Crie duas variáveis inteiras (<code>int a = 5, b = 3;</code>) e exiba a soma delas usando <code>printf("Soma: %d\n", a + b);</code>.
+                    </div>
+                </article>
+
+                <div class="navegacao-aula">
+                    <a href="backend.html" class="link-voltar" style="margin: 0;">&larr; Lista de linguagens</a>
+                    <a href="cpp.html" class="botao-destaque">Próximo: C++ &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="trilhas.html">Trilhas</a></li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

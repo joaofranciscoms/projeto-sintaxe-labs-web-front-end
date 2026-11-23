@@ -62,7 +62,30 @@ botao.addEventListener("click", function () {
                         <strong>Para praticar:</strong> Tente adicionar um contador de cliques usando uma variável <code>let cliques = 0;</code> e incremente com <code>cliques++</code> toda vez que o botão for pressionado.
                     </div>
                 </article>
+                <section class="bloco-quiz">
+                    <h2>Teste seus conhecimentos</h2>
+                    <p>Responda às perguntas abaixo para fixar o conteúdo de JavaScript.</p>
 
+                    <div class="pergunta-quiz">
+                        <p class="enunciado-quiz">1. Onde é recomendado colocar a tag &lt;script&gt; no HTML?</p>
+                        <div class="opcoes-quiz">
+                            <button class="opcao-btn">Antes da tag &lt;!DOCTYPE html&gt;</button>
+                            <button class="opcao-btn" data-correta="true">No final do &lt;body&gt;, antes de fechá-lo</button>
+                            <button class="opcao-btn">Dentro da tag &lt;title&gt;</button>
+                        </div>
+                        <p class="feedback-quiz"></p>
+                    </div>
+
+                    <div class="pergunta-quiz">
+                        <p class="enunciado-quiz">2. Qual método usamos para reagir a um clique em um botão no JavaScript?</p>
+                        <div class="opcoes-quiz">
+                            <button class="opcao-btn">document.getElementById()</button>
+                            <button class="opcao-btn">textContent()</button>
+                            <button class="opcao-btn" data-correta="true">addEventListener("click", ...)</button>
+                        </div>
+                        <p class="feedback-quiz"></p>
+                    </div>
+                </section>
                 <div class="navegacao-aula">
                     <a href="css.html" class="link-voltar" style="margin: 0;">&larr; Anterior: CSS</a>
                     <a href="trilhas.html" class="botao-destaque">Concluir e ver trilhas</a>
@@ -97,6 +120,7 @@ botao.addEventListener("click", function () {
             <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script src="exercicios.js"></script>
 </body>
 
 </html>

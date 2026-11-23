@@ -90,14 +90,18 @@ main {
   gap: 8px 28px;
 }
 
-.menu-principal span {
+.menu-principal span,
+.menu-principal .link-menu {
   border-bottom: 2px solid transparent;
   color: var(--texto-secundario);
   font-size: 15px;
   font-weight: 600;
+  text-decoration: none;
 }
 
-.menu-principal span:hover {
+.menu-principal span:hover,
+.menu-principal .link-menu:hover,
+.menu-principal .link-menu[aria-current="page"] {
   cursor: pointer;
   border-bottom-color: var(--detalhe);
   color: var(--destaque);
@@ -564,16 +568,14 @@ main {
   margin-bottom: 12px;
 }
 
-.bloco-conteudo p,
-.bloco-conteudo li {
+.bloco-conteudo p, .bloco-conteudo li {
   color: var(--texto-secundario);
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
-.bloco-conteudo ul,
-.bloco-conteudo ol {
+.bloco-conteudo ul, .bloco-conteudo ol {
   padding-left: 20px;
   margin-bottom: 16px;
 }

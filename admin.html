@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sintaxe Labs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <span class="marca">Sintaxe <span>Labs</span></span>
+            <nav class="menu-principal" aria-label="Menu principal">
+                <a href="index.html" class="link-menu">Início</a>
+                <a href="admin.html" class="link-menu" aria-current="page">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-admin">
+                <h1>Cadastro de usuários</h1>
+
+                <form id="formulario-usuario" class="bloco-conteudo">
+                    <label for="nome-usuario">Nome do usuário</label>
+                    <input id="nome-usuario" type="text" required>
+
+                    <label for="email-usuario">E-mail</label>
+                    <input id="email-usuario" type="email" required>
+
+                    <div class="acoes-admin">
+                        <button type="submit" class="botao-destaque">Cadastrar</button>
+                        <button type="reset" class="botao-trilha">Limpar campos</button>
+                    </div>
+                </form>
+
+                <section class="bloco-conteudo">
+                    <h2>Usuários cadastrados</h2>
+
+                    <label for="pesquisa-usuario">Pesquisar por nome ou e-mail</label>
+                    <input id="pesquisa-usuario" type="search">
+
+                    <ul id="lista-usuarios"></ul>
+                    <p id="mensagem-lista" role="status"></p>
+                    <button id="excluir-todos" type="button" class="botao-trilha">Excluir todos</button>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="largura-pagina conteudo-rodape">
+            <div class="sobre-rodape">
+                <h2 class="marca">Sintaxe <span>Labs</span></h2>
+                <p>Aprendizado em programação do básico ao avançado.</p>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Explorar</h3>
+                <ul class="lista-rodape">
+                    <li>Apresentação</li>
+                    <li>O projeto</li>
+                    <li>Como funciona</li>
+                    <li>Para quem</li>
+                </ul>
+            </div>
+            <div class="grupo-rodape">
+                <h3>Contato</h3>
+                <ul class="lista-rodape">
+                    <li><a href="https://github.com/joaofranciscoms/projeto-sintaxe-labs-web-front-end">GitHub</a></li>
+                    <li>LinkedIn</li>
+                    <li>E-mail</li>
+                </ul>
+            </div>
+        </div>
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

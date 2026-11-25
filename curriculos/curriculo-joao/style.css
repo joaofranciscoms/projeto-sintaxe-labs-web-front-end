@@ -1,0 +1,159 @@
+:root {
+    --cor-aside: #141d25;
+    --cor-bg: #f4f4f4;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--cor-bg);
+}
+
+.curriculo-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.perfil-info {
+    flex: 1;
+    background-color: var(--cor-aside);
+    color: #ecf0f1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.perfil-info h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+}
+
+.perfil-info h2 {
+    font-size: 1.2em;
+    margin-top: 30px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 5px;
+    width: 100%;
+}
+
+.perfil-info p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.perfil-info ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.perfil-info li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.perfil-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 2;
+    padding: 40px 50px;
+}
+
+.main-content section {
+    margin-bottom: 30px;
+}
+
+.main-content h2 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    border-bottom: 2px solid #bdc3c7;
+    padding-bottom: 5px;
+}
+
+.item-experiencia,
+.item-educacao {
+    margin-bottom: 20px;
+}
+
+.item-experiencia h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #166194;
+}
+
+.item-experiencia ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.imagem-perfil {
+    width: 200px;
+    border: 2px solid #3d9ddd;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .curriculo-container {
+        flex-direction: column;
+    }
+
+    .perfil-info {
+        padding: 30px 20px;
+        border-bottom: 5px solid #2c3e50;
+    }
+
+    .contato ul li {
+        text-align: center;
+    }
+
+    .habilidades ul li {
+        text-align: center;
+    }
+
+    .perfil-info h1 {
+        font-size: 1.5em;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .curriculo-container {
+        margin: 20px auto;
+    }
+
+    .perfil-info {
+        padding: 25px 15px;
+    }
+
+    .main-content {
+        padding: 25px 15px;
+    }
+
+    .imagem-perfil {
+        width: 150px;
+    }
+
+    .main-content h2 {
+        font-size: 1.3em;
+    }
+}

@@ -6,14 +6,61 @@ const listaUsuarios = document.getElementById("lista-usuarios");
 const mensagemLista = document.getElementById("mensagem-lista");
 const botaoExcluirTodos = document.getElementById("excluir-todos");
 
-const chaveProximoUsuario = "sintaxe-labs-proximo-usuario";
-const prefixoUsuario = "sintaxe-labs-usuario-";
+const chaveUsuarios = "sintaxe-labs-usuarios";
 
 /* 
     É importante mencionar que a atividade "Atividade prática com JavaScript – Criação de lista de tarefas" que foi realizada em casa e 
     que foi continuada em sala de aula (Ao realizarmos a adição do registro de datas) serviu como base para a aplicação de alguns conceitos 
     importantes que estão presentes neste arquivo.
 */
+
+function lerCadastros() {
+    const dados = localStorage.getItem(chaveUsuarios);
+
+    if (dados === null) {
+        return { usuarios: [], proximoId: 0 };
+    }
+
+    return JSON.parse(dados);
+}
+
+function salvarCadastros(cadastros) {
+    localStorage.setItem(chaveUsuarios, JSON.stringify(cadastros));
+}
+
+function migrarCadastrosAntigos() {
+    const chaveContadorAntigo = "sintaxe-labs-proximo-usuario";
+    const totalAntigo = Number(localStorage.getItem(chaveContadorAntigo));
+
+    if (totalAntigo > 0 && localStorage.getItem(chaveUsuarios) === null) {
+        const cadastros = lerCadastros();
+
+        for (let id = 0; id < totalAntigo; id++) {
+            const chaveAntiga = "sintaxe-labs-usuario-" + id;
+            const nome = localStorage.getItem(chaveAntiga + "-nome");
+            const email = localStorage.getItem(chaveAntiga + "-email");
+
+            if (nome !== null && email !== null) {
+                const data = localStorage.getItem(chaveAntiga + "-dataFormatada");
+                cadastros.usuarios.push({ id, nome, email, data });
+            }
+        }
+
+        cadastros.proximoId = totalAntigo;
+        salvarCadastros(cadastros);
+    }
+
+    // Percorre de trás para frente porque a remoção altera os índices das chaves.
+    for (let indice = localStorage.length - 1; indice >= 0; indice--) {
+        const chave = localStorage.key(indice);
+
+        if (/^sintaxe-labs-usuario-\d+-(nome|email|dataFormatada|data)$/.test(chave)) {
+            localStorage.removeItem(chave);
+        }
+    }
+
+    localStorage.removeItem(chaveContadorAntigo);
+}
 
 function cadastrarUsuario(evento) {
     evento.preventDefault();
@@ -26,9 +73,6 @@ function cadastrarUsuario(evento) {
         return;
     }
 
-    const numero = Number(localStorage.getItem(chaveProximoUsuario));
-    const chave = prefixoUsuario + numero;
-
     const dataAtual = new Date();
 
     const dia = dataAtual.getDate();
@@ -37,10 +81,10 @@ function cadastrarUsuario(evento) {
 
     const dataFormatada = dia + "/" + mes + "/" + ano;
 
-    localStorage.setItem(chave + "-nome", nome);
-    localStorage.setItem(chave + "-email", email);
-    localStorage.setItem(chave + "-dataFormatada", dataFormatada);
-    localStorage.setItem(chaveProximoUsuario, numero + 1);
+    const cadastros = lerCadastros();
+    cadastros.usuarios.push({ id: cadastros.proximoId, nome, email, data: dataFormatada });
+    cadastros.proximoId++;
+    salvarCadastros(cadastros);
 
     campoNome.value = "";
     campoEmail.value = "";
@@ -53,23 +97,15 @@ function mostrarUsuarios() {
     mensagemLista.textContent = "";
 
     const pesquisa = campoPesquisa.value.trim().toUpperCase();
-    const proximoUsuario = Number(localStorage.getItem(chaveProximoUsuario));
-    let cadastrados = 0;
+    const usuarios = lerCadastros().usuarios;
     let encontrados = 0;
 
-    for (let numero = 0; numero < proximoUsuario; numero++) {
-        const chave = prefixoUsuario + numero;
-        const nome = localStorage.getItem(chave + "-nome");
-
-        if (nome === null) {
-            continue;
-        }
-
-        cadastrados++;
-        const email = localStorage.getItem(chave + "-email");
+    for (const usuario of usuarios) {
+        const nome = usuario.nome;
+        const email = usuario.email;
 
         if (nome.toUpperCase().includes(pesquisa) || email.toUpperCase().includes(pesquisa)) {
-            const data = localStorage.getItem(chave + "-dataFormatada");
+            const data = usuario.data;
             const item = document.createElement("li");
             const texto = document.createTextNode(data + " – " + nome + " – " + email);
             const botaoExcluir = document.createElement("button");
@@ -79,8 +115,7 @@ function mostrarUsuarios() {
             botaoExcluir.textContent = "Excluir";
             botaoExcluir.setAttribute("aria-label", "Excluir cadastro de " + nome + " (" + email + ")");
             botaoExcluir.addEventListener("click", function () {
-                excluirUsuario(chave);
-                mostrarUsuarios();
+                excluirUsuario(usuario.id);
             });
 
             item.appendChild(texto);
@@ -90,27 +125,29 @@ function mostrarUsuarios() {
         }
     }
 
-    if (cadastrados === 0) {
+    if (usuarios.length === 0) {
         mensagemLista.textContent = "Nenhum usuário cadastrado.";
     } else if (encontrados === 0) {
         mensagemLista.textContent = "Nenhum usuário encontrado.";
     }
 }
 
-function excluirUsuario(chave) {
-    localStorage.removeItem(chave + "-nome");
-    localStorage.removeItem(chave + "-email");
-    localStorage.removeItem(chave + "-data");
+function excluirUsuario(id) {
+    const cadastros = lerCadastros();
+
+    for (let indice = 0; indice < cadastros.usuarios.length; indice++) {
+        if (cadastros.usuarios[indice].id === id) {
+            cadastros.usuarios.splice(indice, 1);
+            salvarCadastros(cadastros);
+            break;
+        }
+    }
+
+    mostrarUsuarios();
 }
 
 function excluirTodosUsuarios() {
-    const proximoUsuario = Number(localStorage.getItem(chaveProximoUsuario));
-
-    for (let numero = 0; numero < proximoUsuario; numero++) {
-        excluirUsuario(prefixoUsuario + numero);
-    }
-
-    localStorage.removeItem(chaveProximoUsuario);
+    localStorage.removeItem(chaveUsuarios);
     campoPesquisa.value = "";
     mostrarUsuarios();
 }
@@ -119,4 +156,5 @@ formulario.addEventListener("submit", cadastrarUsuario);
 campoPesquisa.addEventListener("input", mostrarUsuarios);
 botaoExcluirTodos.addEventListener("click", excluirTodosUsuarios);
 
+migrarCadastrosAntigos();
 mostrarUsuarios();

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sintaxe Labs</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <span class="marca">Sintaxe <span>Labs</span></span>
+            <nav class="menu-principal">
+                <a href="../index.html" class="link-menu">Início</a>
+                <a href="cadastro.html" class="link-menu">Cadastro</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-conta">
+                <h1>Entre na sua conta</h1>
+                <form id="formulario-login" class="bloco-conteudo">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" autocomplete="username" required>
+
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" autocomplete="current-password" required>
+
+                    <button type="submit" class="botao-destaque">Entrar</button>
+                    <p id="mensagem-conta" class="mensagem-conta" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/conta.js"></script>
+</body>
+
+</html>

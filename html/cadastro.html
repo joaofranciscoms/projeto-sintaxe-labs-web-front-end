@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Sintaxe Labs</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="largura-pagina conteudo-cabecalho">
+            <span class="marca">Sintaxe <span>Labs</span></span>
+            <nav class="menu-principal">
+                <a href="../index.html" class="link-menu">Início</a>
+                <a href="login.html" class="link-menu">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="secao-aula">
+            <div class="largura-pagina conteudo-conta">
+                <h1>Crie sua conta</h1>
+                <form id="formulario-cadastro" class="bloco-conteudo">
+                    <label for="nome">Nome</label>
+                    <input id="nome" type="text" autocomplete="given-name" required>
+
+                    <label for="sobrenome">Sobrenome</label>
+                    <input id="sobrenome" type="text" autocomplete="family-name" required>
+
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" autocomplete="email" required>
+
+                    <label for="senha">Senha</label>
+                    <input id="senha" type="password" autocomplete="new-password" minlength="8" required>
+
+                    <label for="confirmacao-senha">Confirme a senha</label>
+                    <input id="confirmacao-senha" type="password" autocomplete="new-password" required>
+
+                    <button type="submit" class="botao-destaque">Cadastrar</button>
+                    <p id="mensagem-conta" class="mensagem-conta" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="direitos-autorais">
+            <p>2026 Sintaxe Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/conta.js"></script>
+</body>
+
+</html>

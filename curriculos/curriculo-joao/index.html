@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - João Francisco Martins Simão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="curriculo-container">
+        <aside class="perfil-info">
+            <div class="header">
+            <img class="imagem-perfil" src="imagem/foto-joao.jpg" alt="Foto de Perfil">
+                <h1>João Francisco Martins Simão</h1>
+                <p>Desenvolvedor Backend</p>
+            </div>
+            <section class="contato">
+                <h2>Contato</h2>
+                <ul>
+                    <li><strong>Telefone:</strong> 43 99954-8066</li>
+                    <li><strong>Email:</strong> joaofranciscomscontact@gmail.com</li>
+                    <li><strong>LinkedIn:</strong><a target="_blank"
+                            href="https://www.linkedin.com/in/jo%C3%A3o-francisco-martins-sim%C3%A3o-55a89535b/">www.linkedin.com/in/joão-francisco-martins-simão</a>
+                    </li>
+                    <li><strong>GitHub:</strong> <a target="_blank"
+                            href="https://github.com/joaofranciscoms">github.com/joaofranciscoms</a></li>
+                </ul>
+            </section>
+            <section class="habilidades">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>Java, Spring Boot</li>
+                    <li>Spring Data JPA, Spring Security</li>
+                    <li>RESTful APIs</li>
+                    <li>SQL</li>
+                    <li>PostgreSQL, MySQL</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git, GitHub</li>
+                    <li>C</li>
+                    <li>Inglês (Intermediário)</li>
+                </ul>
+            </section>
+        </aside>
+
+        <section class="main-content">
+            <section class="resumo">
+                <h2>Resumo</h2>
+                <p>Desenvolvedor Backend Java. Venho construindo APIs REST com Spring Boot e
+                    módulos como Spring Security e Spring Data JPA, com atenção a boas práticas de
+                    arquitetura e segurança. Familiaridade com bancos de dados relacionais
+                    (PostgreSQL e MySQL) para modelagem e persistência de dados. Busco primeira
+                    oportunidade como Estagiário de Software.
+                    Atualmente em transição para uma atuação fullstack, aprofundando conhecimentos
+                    em HTML, CSS, JavaScript e Angular para construção de interfaces, com foco na
+                    integração via APIs back for front (BFF) entre o frontend e os serviços Spring Boot.</p>
+            </section>
+            <section class="experiencia">
+                <h2>Experiência - Projetos</h2>
+                <div class="item-experiencia">
+                    <ul>
+                        <li>
+                            Projeto: API REST de Postagens & Autenticação OAuth2
+                            Tecnologias: Spring Security, OAuth2, JWT, MapStruct, PostgreSQL
+                            Desenvolvi uma API REST de posts e comentários com autenticação via
+                            Authorization Server próprio, emitindo tokens JWT e controlando acesso por roles
+                            de usuário.
+                            Implementei tratamento centralizado de exceções, DTOs e mapeamento com
+                            MapStruct, isolando o modelo de domínio da camada de API.
+                            Adicionei validação de dados (Bean Validation) e busca paginada nos endpoints de
+                            listagem, garantindo consistência e performance.
+                        </li>
+                    </ul>
+                </div>
+                <div class="item-experiencia">
+                    <ul>
+                        <li>
+                            Projeto: API de Reservas & Simulação de Concorrência Tecnologias: Java / Spring
+                            Boot / Spring Data JPA / PostgreSQL.
+                            Simulei condições de corrida (race conditions) sob carga de 50 threads simultâneas
+                            para analisar cenários de overbooking em sistema de reservas.
+                            Implementei e comparei três estratégias de concorrência (sem lock, Lock Otimista
+                            com @Version e Lock Pessimista com SELECT FOR UPDATE), reduzindo de 20+
+                            reservas duplicadas para 100% de integridade transacional.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="educacao">
+                <h2>Educação</h2>
+                <div class="item-educacao">
+                    <h3>Engenharia de Software</h3>
+                    <p>UTFPR - Universidade Tecnológica Federal do Paraná - (1/2025 – Presente)</p>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

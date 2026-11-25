@@ -1,6 +1,6 @@
 # Sintaxe Labs
 
-O Sintaxe Labs é um site educacional que organiza material introdutório de programação em duas trilhas, Front-end e Back-end. A [página inicial](index.html) apresenta a proposta de ordenar o estudo por tecnologia e nível. O [catálogo de trilhas](html/trilhas.html) concretiza essa proposta com seis aulas de primeiros passos, cada uma com explicação, exemplo de código e uma atividade para praticar fora do site.
+O Sintaxe Labs é um site educacional que organiza material introdutório de programação em duas trilhas, Front-end e Back-end. A [página inicial](index.html) apresenta a proposta de ordenar o estudo por tecnologia e nível. O [catálogo de trilhas](html/trilhas.html) reúne seis aulas de primeiros passos, cada uma com explicação, exemplo de código, uma proposta de prática e duas questões de múltipla escolha com correção imediata.
 
 Além das aulas, o site oferece cadastro e validação de conta no navegador, uma página Admin para gerenciar uma lista local de usuários e dois currículos acessíveis pelo rodapé da página inicial.
 
@@ -61,7 +61,8 @@ projeto-sintaxe-labs-web-front-end/
 │       └── imagem05.png
 └── js/
     ├── admin.js
-    └── conta.js
+    ├── conta.js
+    └── exercicios.js
 ```
 
 ## Páginas e navegação
@@ -77,16 +78,16 @@ projeto-sintaxe-labs-web-front-end/
 
 As páginas usam cabeçalho, conteúdo principal e rodapé. A página inicial usa `nav` no menu e `section` para organizar o conteúdo. Nas páginas de estudo, as seções identificadas por `.secao-trilhas`, `.secao-tecnologias` e `.secao-aula` delimitam o conteúdo principal. O catálogo usa cartões `.card-trilha`. As listas ordenadas de tecnologias usam `.lista-tecnologias` e `.card-tecnologia`.
 
-Cada aula contém um cabeçalho com título e passo da trilha, dois `article` de classe `.bloco-conteudo` para conceito e prática, passos em lista, exemplos em `pre` e `code`, uma proposta em `.dica-pratica` e links em `.navegacao-aula`. A sequência é sugerida pelos links. Qualquer aula pode ser aberta diretamente da lista da trilha, e “Concluir e ver trilhas” retorna ao catálogo sem gravar progresso. Os exemplos ficam no HTML como texto e as atividades são instruções para praticar por conta própria.
+Cada aula contém um cabeçalho com título e passo da trilha, dois `article` de classe `.bloco-conteudo`, passos em lista, exemplos de código em `pre` e `code` e uma proposta em `.dica-pratica` para quem quer praticar por conta própria. Em seguida, a seção “Teste seus conhecimentos” apresenta duas questões com três alternativas cada, antes dos links em `.navegacao-aula`. Qualquer aula pode ser aberta diretamente da lista da trilha. “Concluir e ver trilhas” retorna ao catálogo sem gravar progresso.
 
-| Aula | Exemplo e atividade | Navegação ao fim da aula |
-| --- | --- | --- |
-| [HTML](html/html.html) | Montar uma página com título, parágrafo e link. A atividade propõe acrescentar subtítulo e lista. | Lista de tecnologias ou CSS |
-| [CSS](html/css.html) | Vincular uma folha de estilos e aplicar regras ao corpo, título e parágrafos. A atividade propõe criar uma classe de destaque. | HTML ou JavaScript |
-| [JavaScript](html/javascript.html) | Ligar um script ao HTML e alterar um título ao clicar em um botão. A atividade propõe um contador de cliques. | CSS ou catálogo de trilhas |
-| [C](html/c.html) | Compilar e executar um programa com GCC. A atividade propõe somar dois inteiros. | Lista de linguagens ou C++ |
-| [C++](html/cpp.html) | Compilar com G++ e imprimir uma saudação. A atividade propõe ler o nome no terminal. | C ou Java |
-| [Java](html/java.html) | Compilar e executar a classe `Main` com as ferramentas do JDK. A atividade propõe criar e chamar um método de saudação. | C++ ou catálogo de trilhas |
+| Aula | Exemplo e proposta de prática | Temas das questões | Navegação ao fim da aula |
+| --- | --- | --- | --- |
+| [HTML](html/html.html) | Montar uma página com título, parágrafo e link. Acrescentar subtítulo e lista. | Finalidade do HTML e tag de link. | Lista de tecnologias ou CSS |
+| [CSS](html/css.html) | Vincular uma folha de estilos e aplicar regras ao corpo, título e parágrafos. Criar uma classe de destaque. | Inclusão de uma folha externa e seletor de classe. | HTML ou JavaScript |
+| [JavaScript](html/javascript.html) | Ligar um script ao HTML e alterar um título ao clicar em um botão. Criar um contador de cliques. | Posição da tag `script` e tratamento do evento de clique. | CSS ou catálogo de trilhas |
+| [C](html/c.html) | Compilar e executar um programa com GCC. Somar dois inteiros. | Cabeçalho de entrada e saída e função para exibir texto no terminal. | Lista de linguagens ou C++ |
+| [C++](html/cpp.html) | Compilar com G++ e imprimir uma saudação. Ler o nome no terminal. | Biblioteca de entrada e saída e exibição de texto. | C ou Java |
+| [Java](html/java.html) | Compilar e executar a classe `Main` com as ferramentas do JDK. Criar e chamar um método de saudação. | Função da JVM e relação entre o nome do arquivo e o da classe pública. | C++ ou catálogo de trilhas |
 
 ### Cadastro, login e Admin
 
@@ -109,7 +110,7 @@ As áreas de mensagem usam `role="status"`. Nas duas telas de conta, os campos d
 
 ## Arquitetura, estilos e recursos
 
-O projeto é um site estático com várias páginas. O HTML define as telas e seus links relativos. O [CSS compartilhado](css/style.css) atende a página inicial e todas as páginas de `html/`. O JavaScript é executado apenas nas telas de cadastro, login e Admin. Os dois scripts usam APIs nativas do navegador e trabalham com chaves de armazenamento distintas. A aplicação não possui chamadas a APIs, código de servidor, banco de dados, framework ou biblioteca JavaScript. Os currículos são páginas estáticas com estilos próprios e sem scripts.
+O projeto é um site estático com várias páginas. O HTML define as telas e seus links relativos. O [CSS compartilhado](css/style.css) atende a página inicial e todas as páginas de `html/`. Os três scripts usam APIs nativas do navegador. [conta.js](js/conta.js) atende cadastro e login, [admin.js](js/admin.js) gerencia a lista administrativa e [exercicios.js](js/exercicios.js) corrige as questões das seis aulas. A aplicação não possui chamadas a APIs remotas, código de servidor, banco de dados, framework ou biblioteca JavaScript. Os currículos são páginas estáticas com estilos próprios e sem scripts.
 
 | Estilo | Efeito na interface |
 | --- | --- |
@@ -117,7 +118,8 @@ O projeto é um site estático com várias páginas. O HTML define as telas e se
 | `.cabecalho`, `.conteudo-cabecalho`, `.menu-principal`, `.rodape`, `.conteudo-rodape` | Mantêm a marca, o espaçamento e a organização do cabeçalho e rodapé. As linhas podem quebrar conforme a largura. O menu destaca os itens no `:hover` com texto azul e borda inferior amarela, e aplica o mesmo tratamento ao link ativo marcado por `aria-current="page"`. Links do rodapé são sublinhados ao passar o ponteiro. |
 | `.duas-colunas`, `.coluna`, `.lista-etapas`, `.grade-trilhas`, `.card-tecnologia` | Usam Flexbox e quebra de linha para reorganizar colunas, cartões e etapas conforme o espaço. Apesar do nome `.grade-trilhas`, a regra usa Flexbox. A folha compartilhada não declara CSS Grid ou media queries. As imagens dos cartões têm recorte com `object-fit: cover`. |
 | `.bloco-conteudo`, `.bloco-codigo`, `.dica-pratica`, `.botao-destaque`, `.botao-trilha` | Separam os blocos de leitura, dão fundo escuro e rolagem horizontal aos exemplos longos e destacam as propostas de prática. Cartões e botões usam variações de cor, sombra ou posição no `:hover`. A folha compartilhada não define um estado `:focus` próprio. |
-| `.conteudo-conta`, `.conteudo-admin`, `.acoes-admin`, `#lista-usuarios` | Limitam a largura dos formulários, organizam rótulos e campos e permitem a quebra da linha de botões no Admin. Na lista, textos longos podem quebrar e cada botão de exclusão tem espaçamento próprio. |
+| `.bloco-quiz`, `.pergunta-quiz`, `.opcoes-quiz`, `.opcao-btn`, `.feedback-quiz` | Separam as questões, empilham os botões e reservam espaço para o retorno abaixo das alternativas. As classes aplicadas pelo script destacam a alternativa selecionada e a mensagem em verde para acerto ou vermelho para erro. |
+| `.conteudo-conta`, `.conteudo-admin`, `.acoes-admin`, `#lista-usuarios` | Limitam a largura dos formulários, organizam rótulos e campos e permitem a quebra da linha de botões no Admin. Na lista, `overflow-wrap: break-word` permite quebrar textos longos, e cada botão de exclusão tem espaçamento próprio. |
 | CSS dos currículos | O de João usa Arial e Flexbox para colocar a barra lateral escura ao lado do conteúdo. Em até 768 px, as colunas se empilham. Em até 480 px, margens, espaçamentos e foto ficam menores. O de Pedro usa Roboto no corpo, Georgia em títulos, `#nome-principal` para centralizar o nome, `.cargo` para destacar o cargo e um seletor de atributo `alt` para circular a foto. Seus links mudam de cor e são sublinhados no `:hover`. |
 
 Os ícones SVG `tarefa`, `projeto`, `pessoa` e `foguete` são carregados como imagens pelos rótulos e pela chamada da página inicial. Os JPG `imagem01`, `imagem02` e `imagem03` ilustram, respectivamente, a apresentação, o projeto e o público. Os PNG `imagem04` e `imagem05` ilustram os cartões Front-end e Back-end. Nas listas das trilhas, os cartões usam os PNG de HTML, CSS, C e C++ e os JPG de JavaScript e Java. As fotos dos currículos permanecem em suas próprias pastas.
@@ -126,12 +128,19 @@ Google Fonts é usado somente no currículo de Pedro, com conexões a `fonts.goo
 
 ## JavaScript, regras e fluxo de dados
 
+### Exercícios de múltipla escolha
+
+Cada uma das seis aulas carrega [exercicios.js](js/exercicios.js) ao fim do `body`. O próprio HTML reúne o enunciado, os botões `.opcao-btn` e o parágrafo `.feedback-quiz` em um bloco `.pergunta-quiz`. A alternativa certa vem marcada com `data-correta="true"`.
+
+Ao clicar em uma alternativa, o script limpa as marcações da tentativa anterior naquela questão e verifica `botao.dataset.correta`. Se a resposta estiver certa, aplica `.correta` ao botão e mostra “Correto! Muito bem.”. Se estiver errada, aplica `.incorreta` e mostra “Resposta incorreta. Tente novamente!”. Cada questão tem seu próprio retorno e permite novas tentativas. As respostas ficam na página atual e são descartadas ao recarregá-la. A navegação entre aulas fica disponível independentemente das respostas.
+
 ### Cadastro e login
 
 [conta.js](js/conta.js) mantém referências para os formulários, o e-mail, a senha e a área de mensagem. O script liga o evento `submit` à função correspondente apenas se encontrar o formulário na página. As duas funções recebem o evento, cancelam o envio padrão e leem os valores dos campos.
 
 | Função | Regras e resultado |
 | --- | --- |
+| `obterChaveConta()` | Lê o e-mail do formulário, converte para minúsculas e devolve o prefixo próprio daquela conta. Cadastro e login usam a mesma função para localizar os dados. |
 | `cadastrarConta(evento)` | O formulário exige senha com pelo menos oito caracteres. O script remove espaços das extremidades de nome e sobrenome e rejeita valores vazios após essa limpeza. Compara a senha e a confirmação exatamente como foram digitadas. Converte o e-mail para minúsculas ao montar a chave e considera o e-mail cadastrado quando já existe a chave de senha correspondente. Se a validação passar, grava nome completo e senha e abre `login.html`. Em caso de falha de armazenamento, exibe mensagem na própria página. |
 | `entrarNaConta(evento)` | Monta a mesma chave com o e-mail em minúsculas, lê a senha e faz uma comparação exata. Um e-mail ausente e uma senha incorreta recebem a mesma mensagem. Uma falha de leitura recebe mensagem específica. Com os dados válidos, a função abre `../index.html`. O redirecionamento é o único efeito do login bem-sucedido sobre a navegação. |
 
@@ -153,7 +162,7 @@ A exclusão individual e a exclusão geral são executadas ao clicar no respecti
 
 ### Persistência
 
-Os três formulários usam `localStorage`, com dados vinculados à origem e ao perfil do navegador. Cadastro e login compartilham as chaves de conta. O Admin mantém um cadastro independente. Os fluxos não usam `sessionStorage`, cookies, IndexedDB ou arquivos JSON. O formato JSON é empregado como texto dentro do `localStorage` apenas para a lista administrativa.
+Os formulários de cadastro, login e Admin usam `localStorage`, com dados vinculados à origem e ao perfil do navegador. Cadastro e login compartilham as chaves de conta. O Admin mantém um cadastro independente e serializa sua lista em JSON dentro do `localStorage`. Os exercícios não gravam respostas, pontuação ou progresso.
 
 | Chave | Valor e uso |
 | --- | --- |
@@ -179,10 +188,11 @@ No Admin, o cadastro ou a exclusão altera o objeto persistido ou remove sua cha
 
 - **Caminhos relativos.** A página inicial referencia `css/`, `html/`, `images/` e `curriculos/` a partir da raiz. As páginas de `html/` usam `../` para alcançar recursos na raiz. Cada currículo resolve sua folha e foto a partir da própria pasta.
 - **Navegação e estilos compartilhados.** Cabeçalhos e rodapés são escritos em cada HTML. Mudanças na navegação ou na sequência de aulas envolvem os links de entrada e de retorno. Alterações em `.largura-pagina`, `.bloco-conteudo` e nas classes de botão atingem várias páginas.
-- **HTML ligado ao JavaScript.** Os scripts buscam os elementos por ID. Ao mudar um ID de campo, formulário, botão ou mensagem, atualize as referências do script e o atributo `for` do rótulo correspondente quando houver.
+- **Formulários ligados ao JavaScript.** Os scripts de conta e Admin buscam os elementos por ID. Ao mudar um ID de campo, formulário, botão ou mensagem, atualize as referências do script e o atributo `for` do rótulo correspondente quando houver.
+- **Questões das aulas.** Para editar uma questão, altere o HTML da aula e mantenha `data-correta="true"` na alternativa certa. O script compartilhado encontra os botões e a mensagem pelas classes dentro de cada `.pergunta-quiz`.
 - **Dados já gravados.** O e-mail em minúsculas faz parte das chaves de conta. No Admin, o ID identifica a linha na exclusão mesmo quando a busca está ativa. Mudanças no formato persistido precisam considerar tanto os dados JSON atuais quanto as chaves legadas reconhecidas por `migrarCadastrosAntigos()`.
 - **Falhas de armazenamento.** O fluxo de conta trata falhas de leitura e escrita como mensagens no formulário. O Admin usa `JSON.parse` e acessa o armazenamento diretamente, sem tratamento de exceções para conteúdo inválido ou indisponibilidade.
 
 ## Conclusão
 
-O percurso de estudo parte da página inicial, passa pelo catálogo e chega a uma das seis aulas ligadas entre si por tecnologia. O HTML concentra o conteúdo e os caminhos entre páginas. A folha compartilhada mantém a apresentação do site, e os scripts acrescentam dois fluxos locais e independentes, um de cadastro e login e outro de gerenciamento da lista do Admin.
+O percurso de estudo parte da página inicial, passa pelo catálogo e chega a uma das seis aulas, cada uma com questões corrigidas no navegador. O HTML reúne o conteúdo, as alternativas e a navegação. A folha compartilhada mantém a apresentação do site, e os scripts cuidam da correção dos exercícios, da validação de contas e do gerenciamento da lista do Admin.

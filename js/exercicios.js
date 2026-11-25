@@ -13,7 +13,7 @@ document.querySelectorAll(".pergunta-quiz").forEach((pergunta) => {
         feedback.className = "feedback-quiz sucesso";
       } else {
         botao.classList.add("incorreta");
-        feedback.textContent = "Ops, resposta incorreta. Tente novamente!";
+        feedback.textContent = "Resposta incorreta. Tente novamente!";
         feedback.className = "feedback-quiz erro";
       }
     });

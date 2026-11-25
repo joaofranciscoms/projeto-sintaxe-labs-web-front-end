@@ -687,7 +687,6 @@ main {
   padding: 4px 10px;
 }
 
-/* --- Exercícios de Múltipla Escolha --- */
 .bloco-quiz {
   background: #ffffff;
   border: 1px solid var(--borda);
@@ -729,7 +728,6 @@ main {
   font-family: inherit;
   font-size: 15px;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .opcao-btn:hover {

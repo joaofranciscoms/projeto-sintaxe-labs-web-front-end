@@ -50,7 +50,6 @@ function migrarCadastrosAntigos() {
         salvarCadastros(cadastros);
     }
 
-    // Percorre de trás para frente porque a remoção altera os índices das chaves.
     for (let indice = localStorage.length - 1; indice >= 0; indice--) {
         const chave = localStorage.key(indice);
 

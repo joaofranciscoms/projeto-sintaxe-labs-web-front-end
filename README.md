@@ -6,6 +6,11 @@ Na versão atual, o [catálogo de trilhas](html/trilhas.html) organiza o conteú
 
 Além das aulas, o site oferece cadastro e validação de conta no navegador, uma página Admin para gerenciar uma lista local de usuários e dois currículos acessíveis pelo rodapé da página inicial.
 
+## Desenvolvedores
+
+João Francisco Martins Simão  
+Pedro Augusto Garcias Santos
+
 ## Como abrir o projeto
 
 Abra [index.html](index.html) no navegador para navegar pelas páginas. Para testar cadastro, login e Admin, sirva a raiz do projeto com um servidor HTTP estático local e acesse as páginas pelo mesmo endereço e porta. Isso mantém os formulários sob uma única origem para o `localStorage`. O site é entregue em arquivos HTML, CSS e JavaScript que o navegador lê diretamente, sem etapa de compilação ou instalação de pacotes.

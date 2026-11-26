@@ -189,15 +189,6 @@ flowchart TB
 
 No Admin, o cadastro ou a exclusão altera o objeto persistido ou remove sua chave. Em seguida, `mostrarUsuarios()` lê o estado atual e atualiza a lista. A pesquisa vai diretamente do evento `input` à renderização, sem gravação. A abertura inicial executa a migração antes da primeira leitura para renderizar.
 
-## Pontos de manutenção
-
-- **Caminhos relativos.** A página inicial referencia `css/`, `html/`, `images/` e `curriculos/` a partir da raiz. As páginas de `html/` usam `../` para alcançar recursos na raiz. Cada currículo resolve sua folha e foto a partir da própria pasta.
-- **Navegação e estilos compartilhados.** Cabeçalhos e rodapés são escritos em cada HTML. Mudanças na navegação ou na sequência de aulas envolvem os links de entrada e de retorno. Alterações em `.largura-pagina`, `.bloco-conteudo` e nas classes de botão atingem várias páginas.
-- **Formulários ligados ao JavaScript.** Os scripts de conta e Admin buscam os elementos por ID. Ao mudar um ID de campo, formulário, botão ou mensagem, atualize as referências do script e o atributo `for` do rótulo correspondente quando houver.
-- **Questões das aulas.** Para editar uma questão, altere o HTML da aula e mantenha `data-correta="true"` na alternativa certa. O script compartilhado encontra os botões e a mensagem pelas classes dentro de cada `.pergunta-quiz`.
-- **Dados já gravados.** O e-mail em minúsculas faz parte das chaves de conta. No Admin, o ID identifica a linha na exclusão mesmo quando a busca está ativa. Mudanças no formato persistido precisam considerar tanto os dados JSON atuais quanto as chaves legadas reconhecidas por `migrarCadastrosAntigos()`.
-- **Falhas de armazenamento.** O fluxo de conta trata falhas de leitura e escrita como mensagens no formulário. O Admin usa `JSON.parse` e acessa o armazenamento diretamente, sem tratamento de exceções para conteúdo inválido ou indisponibilidade.
-
 ## Conclusão
 
 O percurso de estudo parte da página inicial, passa pelo catálogo e chega a uma das seis aulas, cada uma com questões corrigidas no navegador. O HTML reúne o conteúdo, as alternativas e a navegação. A folha compartilhada mantém a apresentação do site, e os scripts cuidam da correção dos exercícios, da validação de contas e do gerenciamento da lista do Admin.

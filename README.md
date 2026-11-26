@@ -1,6 +1,8 @@
 # Sintaxe Labs
 
-O Sintaxe Labs é um site educacional que organiza material introdutório de programação em duas trilhas, Front-end e Back-end. A [página inicial](index.html) apresenta a proposta de ordenar o estudo por tecnologia e nível. O [catálogo de trilhas](html/trilhas.html) reúne seis aulas de primeiros passos, cada uma com explicação, exemplo de código, uma proposta de prática e duas questões de múltipla escolha com correção imediata.
+O Sintaxe Labs é um site educacional de programação. A [página inicial](index.html) apresenta a proposta de organizar o estudo por tecnologia e nível, do básico ao avançado.
+
+Na versão atual, o [catálogo de trilhas](html/trilhas.html) organiza o conteúdo introdutório em duas trilhas, Front-end e Back-end. Ao todo, são seis aulas de primeiros passos, cada uma com explicação, exemplo de código, uma proposta de prática e duas questões de múltipla escolha com correção imediata.
 
 Além das aulas, o site oferece cadastro e validação de conta no navegador, uma página Admin para gerenciar uma lista local de usuários e dois currículos acessíveis pelo rodapé da página inicial.
 
@@ -126,6 +128,12 @@ Os ícones SVG `tarefa`, `projeto`, `pessoa` e `foguete` são carregados como im
 
 Google Fonts é usado somente no currículo de Pedro, com conexões a `fonts.googleapis.com` e `fonts.gstatic.com`. Os links externos nos rodapés e currículos são destinos de navegação. Ferramentas como GCC, G++ e JDK aparecem nas aulas para executar exemplos à parte.
 
+### Créditos das imagens da página inicial
+
+- Lukas Blazek — [Caneta retrátil azul](https://www.pexels.com/pt-br/foto/caneta-retratil-azul-574070/)
+- Daniil Komov — [Tela de computador com código](https://www.pexels.com/pt-br/foto/close-up-de-tela-de-computador-com-codigo-exibido-34803966/)
+- cottonbro studio — [Teclado em ambiente de escritório](https://www.pexels.com/pt-br/foto/escritorio-tecnologia-teclado-negocio-6804613/)
+
 ## JavaScript, regras e fluxo de dados
 
 ### Exercícios de múltipla escolha
@@ -162,7 +170,7 @@ A exclusão individual e a exclusão geral são executadas ao clicar no respecti
 
 ### Persistência
 
-Os formulários de cadastro, login e Admin usam `localStorage`, com dados vinculados à origem e ao perfil do navegador. Cadastro e login compartilham as chaves de conta. O Admin mantém um cadastro independente e serializa sua lista em JSON dentro do `localStorage`. Os exercícios não gravam respostas, pontuação ou progresso.
+Os formulários de cadastro, login e Admin usam `localStorage`, com dados vinculados à origem e ao perfil do navegador. Cadastro e login compartilham as chaves de conta. O Admin mantém um cadastro independente e serializa sua lista em JSON dentro do `localStorage`. O código do projeto não usa `sessionStorage`, cookies, IndexedDB nem arquivos JSON para persistência. Os exercícios não gravam respostas, pontuação ou progresso.
 
 | Chave | Valor e uso |
 | --- | --- |
@@ -183,15 +191,6 @@ flowchart TB
 ```
 
 No Admin, o cadastro ou a exclusão altera o objeto persistido ou remove sua chave. Em seguida, `mostrarUsuarios()` lê o estado atual e atualiza a lista. A pesquisa vai diretamente do evento `input` à renderização, sem gravação. A abertura inicial executa a migração antes da primeira leitura para renderizar.
-
-## Pontos de manutenção
-
-- **Caminhos relativos.** A página inicial referencia `css/`, `html/`, `images/` e `curriculos/` a partir da raiz. As páginas de `html/` usam `../` para alcançar recursos na raiz. Cada currículo resolve sua folha e foto a partir da própria pasta.
-- **Navegação e estilos compartilhados.** Cabeçalhos e rodapés são escritos em cada HTML. Mudanças na navegação ou na sequência de aulas envolvem os links de entrada e de retorno. Alterações em `.largura-pagina`, `.bloco-conteudo` e nas classes de botão atingem várias páginas.
-- **Formulários ligados ao JavaScript.** Os scripts de conta e Admin buscam os elementos por ID. Ao mudar um ID de campo, formulário, botão ou mensagem, atualize as referências do script e o atributo `for` do rótulo correspondente quando houver.
-- **Questões das aulas.** Para editar uma questão, altere o HTML da aula e mantenha `data-correta="true"` na alternativa certa. O script compartilhado encontra os botões e a mensagem pelas classes dentro de cada `.pergunta-quiz`.
-- **Dados já gravados.** O e-mail em minúsculas faz parte das chaves de conta. No Admin, o ID identifica a linha na exclusão mesmo quando a busca está ativa. Mudanças no formato persistido precisam considerar tanto os dados JSON atuais quanto as chaves legadas reconhecidas por `migrarCadastrosAntigos()`.
-- **Falhas de armazenamento.** O fluxo de conta trata falhas de leitura e escrita como mensagens no formulário. O Admin usa `JSON.parse` e acessa o armazenamento diretamente, sem tratamento de exceções para conteúdo inválido ou indisponibilidade.
 
 ## Conclusão
 

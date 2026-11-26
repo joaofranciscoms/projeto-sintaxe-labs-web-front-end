@@ -135,9 +135,9 @@ Google Fonts é usado somente no currículo de Pedro, com conexões a `fonts.goo
 
 ### Créditos das imagens da página inicial
 
-- Lukas Blazek — [Caneta retrátil azul](https://www.pexels.com/pt-br/foto/caneta-retratil-azul-574070/)
-- Daniil Komov — [Tela de computador com código](https://www.pexels.com/pt-br/foto/close-up-de-tela-de-computador-com-codigo-exibido-34803966/)
-- cottonbro studio — [Teclado em ambiente de escritório](https://www.pexels.com/pt-br/foto/escritorio-tecnologia-teclado-negocio-6804613/)
+- Lukas Blazek — https://www.pexels.com/pt-br/foto/caneta-retratil-azul-574070/
+- Daniil Komov — https://www.pexels.com/pt-br/foto/close-up-de-tela-de-computador-com-codigo-exibido-34803966/
+- cottonbro studio — https://www.pexels.com/pt-br/foto/escritorio-tecnologia-teclado-negocio-6804613/
 
 ## JavaScript, regras e fluxo de dados
 

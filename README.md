@@ -104,7 +104,7 @@ As três páginas usam formulários com `label` ligado ao `id` dos campos e carr
 | --- | --- | --- |
 | [Cadastro](html/cadastro.html) e [conta.js](js/conta.js) | `#formulario-cadastro`, com `#nome`, `#sobrenome`, `#email`, `#senha` e `#confirmacao-senha`. Todos são obrigatórios. O botão “Cadastrar” envia o formulário. | O script usa `#mensagem-conta` para exibir os erros tratados. Um cadastro salvo abre a página de login. |
 | [Login](html/login.html) e [conta.js](js/conta.js) | `#formulario-login`, com `#email` e `#senha` obrigatórios. O botão “Entrar” envia o formulário. | O script usa `#mensagem-conta` para os erros. Ao validar os dados, redireciona à página inicial. |
-| [Admin](html/admin.html) e [admin.js](js/admin.js) | `#formulario-usuario`, com `#nome-usuario` e `#email-usuario` obrigatórios. “Cadastrar” envia o formulário e “Limpar campos” é o reset nativo dos dois campos. Fora do formulário, `#pesquisa-usuario` filtra a lista e `#excluir-todos` remove os cadastros. | `#lista-usuarios` é uma lista não ordenada preenchida pelo script, com data, nome, e-mail e botão “Excluir” por item. `#mensagem-lista` informa quando a lista está vazia ou a busca não encontra resultados. |
+| [Admin](html/admin.html) e [admin.js](js/admin.js) | `#formulario-usuario`, com `#nome-usuario` e `#email-usuario` obrigatórios. “Cadastrar” envia o formulário e `#limpar-campos` chama `limparCampos()`. Fora do formulário, `#pesquisa-usuario` filtra a lista e `#excluir-todos` remove os cadastros. | `#lista-usuarios` é uma lista não ordenada preenchida pelo script, com data, nome, e-mail e botão “Excluir” por item. `#mensagem-lista` informa quando a lista está vazia ou a busca não encontra resultados. |
 
 As áreas de mensagem usam `role="status"`. Nas duas telas de conta, os campos de senha usam `type="password"` e a estilização oculta `.mensagem-conta` enquanto estiver vazia. Os campos de e-mail nas três telas usam `type="email"`, com validação nativa do navegador.
 
@@ -159,15 +159,17 @@ Ao clicar em uma alternativa, o script limpa as marcações da tentativa anterio
 
 ### Administração da lista de usuários
 
-[admin.js](js/admin.js) mantém referências para formulário, campos, busca, lista, mensagem e botão de exclusão geral. Ao abrir a página, executa a migração de dados legados e renderiza os usuários. Depois, `submit` cadastra, `input` refaz a pesquisa e `click` dispara as exclusões. O botão de cada registro mantém o ID do usuário associado ao seu evento de clique.
+[admin.js](js/admin.js) mantém referências para formulário, campos, busca, lista, mensagem e botões de ação. Ao abrir a página, executa a migração de dados legados e renderiza os usuários. Depois, `submit` cadastra, `input` refaz a pesquisa e `click` aciona a limpeza dos campos ou a exclusão, conforme o botão. O botão de cada registro mantém o ID do usuário associado ao seu evento de clique.
 
 | Função | Regras e resultado |
 | --- | --- |
 | `lerCadastros()` | Lê a chave `sintaxe-labs-usuarios` e converte a string JSON em objeto. Quando a chave está ausente, retorna lista vazia e `proximoId` igual a zero. |
 | `salvarCadastros(cadastros)` | Recebe o objeto com a lista e o contador, converte para JSON e grava na mesma chave. |
 | `migrarCadastrosAntigos()` | Se houver contador legado maior que zero e a chave atual estiver ausente, percorre os IDs antigos e importa os registros com nome e e-mail disponíveis, preservando ID e a data formatada armazenada. Usa o total antigo como próximo ID. Ao final, remove o contador e as chaves antigas correspondentes ao padrão de nome, e-mail e data. |
-| `cadastrarUsuario(evento)` | Cancela o envio padrão, remove espaços nas extremidades do nome e mostra um alerta se ele ficar vazio. Usa a data local obtida com `Date` em formato dia/mês/ano, sem zeros de preenchimento. Adiciona o registro ao fim da lista com `proximoId`, incrementa o contador e salva. Limpa nome, e-mail e pesquisa antes de redesenhar a lista. O fluxo permite cadastrar mais de um registro com o mesmo e-mail. |
-| `mostrarUsuarios()` | Limpa a lista e a mensagem e recria os itens na ordem armazenada. Remove espaços nas extremidades da pesquisa e compara o trecho digitado com o nome ou e-mail em maiúsculas, ignorando diferenças de caixa. Cria cada `li`, insere os dados com `createTextNode` e adiciona o botão “Excluir” com rótulo acessível. Usa um contador de correspondências para distinguir lista vazia de pesquisa sem resultados. |
+| `cadastrarUsuario(evento)` | Cancela o envio padrão, remove espaços nas extremidades do nome e mostra um alerta se ele ficar vazio. Usa a data local obtida com `Date` em formato dia/mês/ano, sem zeros de preenchimento. Adiciona o registro ao fim da lista com `proximoId`, incrementa o contador e salva. Chama `limparCampos()`, limpa a pesquisa e redesenha a lista. O fluxo permite cadastrar mais de um registro com o mesmo e-mail. |
+| `limparCampos()` | Esvazia os campos de nome e e-mail ao clicar em “Limpar campos” ou ao concluir um cadastro. |
+| `pesquisarUsuarios(usuarios)` | Remove espaços das extremidades da pesquisa e retorna os cadastros cujo nome ou e-mail contém o trecho digitado, ignorando diferenças entre maiúsculas e minúsculas. |
+| `mostrarUsuarios()` | Usa `pesquisarUsuarios()` para obter os registros a exibir na ordem armazenada. Cria cada `li`, insere os dados com `createTextNode` e adiciona o botão “Excluir” com rótulo acessível. Distingue lista vazia de pesquisa sem resultados pela quantidade de cadastros e de correspondências. |
 | `excluirUsuario(id)` | Procura pelo ID recebido, remove o registro correspondente, salva a lista e redesenha a interface com a pesquisa atual. |
 | `excluirTodosUsuarios()` | Remove a chave da lista e do contador, limpa a pesquisa e redesenha a interface vazia. A próxima inclusão começa com ID zero. |
 
@@ -195,7 +197,7 @@ flowchart TB
     L -->|Erro tratado| M
 ```
 
-No Admin, o cadastro ou a exclusão altera o objeto persistido ou remove sua chave. Em seguida, `mostrarUsuarios()` lê o estado atual e atualiza a lista. A pesquisa vai diretamente do evento `input` à renderização, sem gravação. A abertura inicial executa a migração antes da primeira leitura para renderizar.
+No Admin, o cadastro ou a exclusão altera o objeto persistido ou remove sua chave. Em seguida, `mostrarUsuarios()` lê o estado atual e atualiza a lista. A cada evento `input` na busca, `mostrarUsuarios()` usa `pesquisarUsuarios()` para filtrar os registros exibidos. A abertura inicial executa a migração antes da primeira leitura para renderizar.
 
 ## Conclusão
 
